@@ -1,0 +1,21 @@
+---
+galaxy_info:
+  author: Adithya Khamithkar
+  description: Partial Ansible playbook collection, stripped irrelevant content
+  license: MIT
+  min_ansible_version: 2.0
+  platforms:
+   - name: Ubuntu
+  versions:
+   - trusty
+  categories:
+   - java
+   - jdk
+   - jenkins
+   - aws
+   - ec2
+   - docker
+   - rancher
+   - gitlab
+   - nodejs
+dependencies: []

@@ -1,0 +1,11 @@
+[all]
+
+[all:vars]
+
+#Localhost
+[local]
+localhost              ansible_connection=local
+
+[jenkins]
+jenkins-01 ansible_ssh_host=54.162.87.82 ansible_ssh_private_key_file=~/.ssh/LiatrioKeyPairFinal.pem ansible_ssh_user=ubuntu 
+
