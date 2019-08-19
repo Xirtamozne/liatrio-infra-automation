@@ -1,5 +1,7 @@
 FROM ubuntu:16.04
-MAINTAINER (original) Fabian Stäber, fabian@fstab.de
+MAINTAINER Fabian Stäber, fabian@fstab.de
+
+ENV LAST_UPDATE=2016-08-21
 
 #####################################################################################
 # Current version is aws-cli/1.10.53 Python/2.7.12
@@ -66,9 +68,13 @@ RUN \
 
 USER root
 
-RUN mkdir /home/aws/liatrio
-ADD liatrio-infra-automation /home/aws/liatrio
-
-RUN chown -R aws:aws /home/aws
+RUN mkdir examples
+ADD examples/etag.sh /home/aws/examples/etag.sh
+ADD examples/s3diff.sh /home/aws/examples/s3diff.sh
+ADD examples/start.sh /home/aws/examples/start.sh
+ADD examples/terminate.sh /home/aws/examples/terminate.sh
+ADD examples/init-instance.script /home/aws/examples/init-instance.script
+ADD examples/README.md /home/aws/examples/README.md
+RUN chown -R aws:aws /home/aws/examples
 
 USER aws
