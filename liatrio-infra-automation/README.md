@@ -24,7 +24,7 @@
 
 ## Post-installation setup:
 * Configure maven in Global Tools in Jenkins, call it Maven361
-* Log in to Nexus and establish the liatrio-mave repo (release type, hosted)
+* Log in to Nexus and establish the liatrio-maven repo (release type, hosted)
 * Point Jenkins instance at GitHub Repo's Jenkinsfile (Create the Pipeline build)
 * Establish webhook from GitHub, point it to Jenkins instance (automate on push)
 
