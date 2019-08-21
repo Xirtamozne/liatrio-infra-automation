@@ -5,7 +5,7 @@ import subprocess
 
 class AWSCreds:
    def __init__(self):
-      self.mycreds = json.loads(subprocess.check_output(["aws", "iam", "get-session-token"]))
+      self.mycreds = json.loads(subprocess.check_output(["aws", "sts", "get-session-token"]))
       self.myowner = json.loads(subprocess.check_output(["aws", "iam", "get-user"]))
 
    def getAccessKeyId(self):
