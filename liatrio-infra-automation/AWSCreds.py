@@ -5,7 +5,8 @@ import subprocess
 
 class AWSCreds:
    def __init__(self):
-      self.mycreds = json.loads(subprocess.check_output(["aws", "sts", "get-session-token"]))
+      self.mycreds = json.loads(subprocess.check_output(["aws", "iam", "get-session-token"]))
+      self.myowner = json.loads(subprocess.check_output(["aws", "iam", "get-user"]))
 
    def getAccessKeyId(self):
       return str(self.mycreds['Credentials']['AccessKeyId'])
@@ -13,8 +14,11 @@ class AWSCreds:
    def getSecretAccessKey(self):
       return str(self.mycreds['Credentials']['SecretAccessKey'])
 
-   def replaceTemplate(self, filename, replaceAccessKeyId='AWSACCESSKEY', replaceSecretAccessKey='AWSSECRETKEY'):
+   def getAMIOwner(self):
+      return str(self.myowner['User']['Arn']).split(':')[4]
+
+   def replaceTemplate(self, filename, replaceAMIOwner='AMIOWNER', replaceAccessKeyId='AWSACCESSKEY', replaceSecretAccessKey='AWSSECRETKEY'):
       template = open(filename + ".template").read()
-      outFile = template.replace(replaceAccessKeyId, self.getAccessKeyId()).replace(replaceSecretAccessKey, self.getSecretAccessKey())
+      outFile = template.replace(replaceAMIOwner, self.getAMIOwner()).replace(replaceAccessKeyId, self.getAccessKeyId()).replace(replaceSecretAccessKey, self.getSecretAccessKey())
       f = open(filename, 'w')
       f.write(outFile)

@@ -1,6 +1,4 @@
 provider "aws" {
-    access_key = "AWSACCESSKEY"
-    secret_key = "AWSSECRETKEY"
     region = "us-east-1"
 }
 
@@ -13,7 +11,7 @@ data "aws_ami" "ec2-ami" {
     name   = "tag:Name"
     values = ["Liatrio-Project-AMI"]
   }
-  owners=["282458246159"]
+  owners=["AMIOWNER"]
   most_recent = true
 }
 
