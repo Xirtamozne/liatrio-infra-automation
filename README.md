@@ -13,7 +13,7 @@ like [EC2](http://aws.amazon.com/ec2), [S3](http://aws.amazon.com/s3/), etc.
 
 The _docker-aws-cli_ creates a [Docker](https://docker.io) image containing all dependencies needed to run `aws`. That way, you can run `aws` in a [Docker](https://docker.io) container without setting the `aws` dependencies on the host system.
 
-``` This has been extended to support an environment that includes packer, terraform, and ansible, and then bootstraps Jenkins and Nexus on top of a medium t3 AWS instance. See the README.md in the liatrio-automation-infra folder. ```
+``` This has been extended to support an environment that includes packer, terraform, and ansible, and then bootstraps Jenkins and Nexus on top of a medium t3 AWS instance. See the README.md in the liatrio-infra-automation folder. ```
 
 Run from Docker Hub
 -------------------
