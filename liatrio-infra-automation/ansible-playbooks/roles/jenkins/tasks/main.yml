@@ -11,11 +11,6 @@
 - name: Add the Jenkins APT repository
   apt_repository: repo="deb http://pkg.jenkins-ci.org/debian binary/" state=present
 
-- name: Install Jenkins
-  apt: name={{item}} state=latest
-  with_items:
-  - jenkins
-
 - name: Configure Jenkins
   template: src=jenkins.j2 dest=/etc/default/jenkins
 
@@ -26,7 +21,7 @@
 
 - name: Disable Initial Admin Setup
   copy:
-    src: /root/liatrio/ansible/basic-security.groovy
+    src: /home/aws/liatrio/basic-security.groovy
     dest: /var/lib/jenkins/init.groovy.d/basic-security.groovy
 
 - name: Restart Jenkins 

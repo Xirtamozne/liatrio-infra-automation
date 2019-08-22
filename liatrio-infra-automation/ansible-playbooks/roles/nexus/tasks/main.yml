@@ -4,15 +4,11 @@
 
 - name: Download nexus
   unarchive: 
-    src: '{{pl_nexus_download_url}}' 
+    src: '/home/aws/liatrio/nexus-3.7.1-02-unix.tar.gz' 
     dest: '{{pl_nexus_dir}}' 
     remote_src: yes 
     group: nexus 
     owner: nexus
-  delay: 5
-  register: result
-  until: result is succeeded
-  retries: 3
 
 - name: Install OpenJDK8
   apt:
