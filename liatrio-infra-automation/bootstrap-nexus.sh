@@ -1,1 +1,1 @@
-ansible-playbook -i ansible-playbooks/inventory/template-env ansible-playbooks/install-nexus.yml
+ansible-playbook -vvvvi .instanceip.yml ansible-playbooks/install-nexus.yml
