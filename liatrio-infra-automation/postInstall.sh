@@ -1,2 +1,2 @@
 apt -y update && apt install -y python
-apy -y install jenkins
+apt -y install jenkins
