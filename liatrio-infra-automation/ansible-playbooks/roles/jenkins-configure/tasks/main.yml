@@ -8,9 +8,9 @@
 - name: Install jenkins plugins
   shell: bash /home/jenkins/install-jenkins-plugins.sh {{item}}
   with_items:
-  - ansible
-  - ant
-  - antisamy-markup-formatter
+  #- ansible
+  #- ant
+  #- antisamy-markup-formatter
   - aws-java-sdk
   - categorized-view
   - conditional-buildstep
@@ -20,35 +20,35 @@
   - git
   - git-client
   - github
-  - htmlpublisher
-  - icon-shim
-  - jackson2-api
-  - javadoc
-  - jobConfigHistory
-  - junit
-  - ldap
+  #- htmlpublisher
+  #- icon-shim
+  #- jackson2-api
+  #- javadoc
+  #- jobConfigHistory
+  #- junit
+  #- ldap
   - mailer
   - matrix-project
   - maven-plugin
   - multiple-scms
   - nexus-artifact-uploader
-  - pam-auth
+  #- pam-auth
   - parameterized-trigger
   - performance
   - pipeline-utility-steps
-  - rebuild
+  #- rebuild
   - run-condition
-  - s3
+  #- s3
   - scm-api
   - script-security
   - ssh-credentials
   - structs
   - thinBackup
   - token-macro
-  - windows-slaves
+  #- windows-slaves
   - workflow-step-api
   - workflow-aggregator
-  - matrix-auth
+  #- matrix-auth
   - extended-choice-parameter 
 
 - name: Stop Jenkins
