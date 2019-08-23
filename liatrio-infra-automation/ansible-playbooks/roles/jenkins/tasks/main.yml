@@ -11,6 +11,10 @@
 - name: Add the Jenkins APT repository
   apt_repository: repo="deb http://pkg.jenkins-ci.org/debian binary/" state=present
 
+- name: Install jenkins 
+  apt:
+    name: jenkins
+
 - name: Configure Jenkins
   template: src=jenkins.j2 dest=/etc/default/jenkins
 
