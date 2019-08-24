@@ -28,6 +28,11 @@
     src: /home/aws/liatrio/basic-security.groovy
     dest: /var/lib/jenkins/init.groovy.d/basic-security.groovy
 
+- name: Configure global tools, Nexus credentials, and liatrio pipelinee job
+  unarchive:
+    src: /home/aws/liatrio/Post-Config-Jenkins.tar
+    dest: /var/lib/jenkins
+
 - name: Restart Jenkins 
   service:
     name: jenkins

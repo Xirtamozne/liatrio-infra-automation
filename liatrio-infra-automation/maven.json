@@ -1,0 +1,5 @@
+{
+  "name": "liatrio-maven-repo",
+  "type": "groovy",
+  "content": "repository.createMavenHosted('maven-internal')"
+}
