@@ -30,7 +30,7 @@
 
 - name: Configure global tools, Nexus credentials, and liatrio pipelinee job
   unarchive:
-    src: /home/aws/liatrio/Post-Config-Jenkins.tar
+    src: /home/aws/liatrio/JenkinsXMLTweaks.tar
     dest: /var/lib/jenkins
 
 - name: Restart Jenkins 
