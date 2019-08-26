@@ -62,7 +62,9 @@ RUN \
     virtualenv aws/env && \
     ./aws/env/bin/pip install awscli && \
     echo 'source $HOME/aws/env/bin/activate' >> .bashrc && \
-    echo 'complete -C aws_completer aws' >> .bashrc
+    echo 'complete -C aws_completer aws' >> .bashrc  && \
+    echo 'alias deploy="cd /home/aws/liatrio; ./deployInfra.sh"' >> .bashrc && \
+    echo 'alias teardown="cd /home/aws/liatrio; ./teardown.sh"' >> .bashrc
 
 USER root
 
