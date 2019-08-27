@@ -1,16 +1,7 @@
-#
-#About: This will instlal jenkins
-#
 ---
-#- hosts: '{{inventory}}'
-#- hosts: '54.197.68.190'
 - hosts: 'jenkins'
   become: yes
   roles:
   - jdk
   - jenkins
-  #- new-relic-java-agent
-  #- nginx
-  #- nginx-jenkins
-  # - ansible
   - jenkins-configure
