@@ -61,6 +61,7 @@ RUN \
     mkdir aws && \
     virtualenv aws/env && \
     ./aws/env/bin/pip install awscli && \
+    ./aws/env/bin/pip install requests && \
     echo 'source $HOME/aws/env/bin/activate' >> .bashrc && \
     echo 'complete -C aws_completer aws' >> .bashrc  && \
     echo 'alias deploy="cd /home/aws/liatrio; ./deployInfra.sh"' >> .bashrc && \
