@@ -11,7 +11,7 @@
   #- ansible
   #- ant
   #- antisamy-markup-formatter
-  - aws-java-sdk
+  #- aws-java-sdk
   - categorized-view
   - conditional-buildstep
   - copyartifact
@@ -27,8 +27,8 @@
   #- jobConfigHistory
   #- junit
   #- ldap
-  - mailer
-  - matrix-project
+  #- mailer
+  #- matrix-project
   - maven-plugin
   - multiple-scms
   - nexus-artifact-uploader
@@ -49,7 +49,7 @@
   - workflow-step-api
   - workflow-aggregator
   #- matrix-auth
-  - extended-choice-parameter 
+  #- extended-choice-parameter 
 
 - name: Stop Jenkins
   service: name=jenkins state=stopped
