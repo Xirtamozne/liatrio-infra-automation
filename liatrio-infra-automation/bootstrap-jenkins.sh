@@ -1,1 +1,1 @@
-ansible-playbook -i .instanceip.yml ansible-playbooks/install-jenkins.yml
+ansible-playbook -vvi .instanceip.yml ansible-playbooks/install-jenkins.yml
