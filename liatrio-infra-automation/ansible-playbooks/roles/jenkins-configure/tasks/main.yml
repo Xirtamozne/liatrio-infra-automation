@@ -8,10 +8,7 @@
 - name: Install jenkins plugins
   shell: bash /home/jenkins/install-jenkins-plugins.sh {{item}}
   with_items:
-  #- ansible
-  #- ant
-  #- antisamy-markup-formatter
-  #- aws-java-sdk
+  - ansible
   - categorized-view
   - conditional-buildstep
   - copyartifact
@@ -20,36 +17,23 @@
   - git
   - git-client
   - github
-  #- htmlpublisher
-  #- icon-shim
-  #- jackson2-api
-  #- javadoc
-  #- jobConfigHistory
-  #- junit
-  #- ldap
-  #- mailer
-  #- matrix-project
   - maven-plugin
   - multiple-scms
   - nexus-artifact-uploader
-  #- pam-auth
   - parameterized-trigger
   - performance
   - pipeline-utility-steps
-  #- rebuild
+  - rebuild
   - run-condition
-  #- s3
+  - s3
   - scm-api
   - script-security
   - ssh-credentials
   - structs
   - thinBackup
   - token-macro
-  #- windows-slaves
   - workflow-step-api
   - workflow-aggregator
-  #- matrix-auth
-  #- extended-choice-parameter 
 
 - name: Stop Jenkins
   service: name=jenkins state=stopped
@@ -70,8 +54,3 @@
   delay: 5
   until: >
     'status' in jenkins_service_status and jenkins_service_status['status'] == 200
-
-#- name: Install specific version of Nexus Jenkins Plugin
-#  jenkins_plugin:
-#    name: nexus-jenkins-plugin
-#    version: "3.5.20190425-152158.c63841b"
