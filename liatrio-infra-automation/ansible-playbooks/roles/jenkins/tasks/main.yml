@@ -28,7 +28,7 @@
     src: /home/aws/liatrio/basic-security.groovy
     dest: /var/lib/jenkins/init.groovy.d/basic-security.groovy
 
-- name: Configure global tools, Nexus credentials, and liatrio pipelinee job
+- name: Configure global tools, Nexus credentials, and liatrio pipeline job
   unarchive:
     src: /home/aws/liatrio/JenkinsXMLTweaks.tar
     dest: /var/lib/jenkins
