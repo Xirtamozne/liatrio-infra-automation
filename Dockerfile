@@ -1,9 +1,4 @@
 FROM ubuntu:16.04
-MAINTAINER (original) Fabian Stäber, fabian@fstab.de
-
-#####################################################################################
-# Current version is aws-cli/1.10.53 Python/2.7.12
-#####################################################################################
 
 RUN apt-get update && \
     apt-get upgrade -y && \
