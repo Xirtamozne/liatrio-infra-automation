@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 cd /home/aws/liatrio/
 echo RUN STARTED:   
 date
