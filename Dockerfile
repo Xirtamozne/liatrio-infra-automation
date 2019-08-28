@@ -77,4 +77,4 @@ RUN chown -R aws:aws /home/aws
 
 USER aws
 
-RUN source /home/aws/.bashrc
+RUN bash /home/aws/.bashrc
