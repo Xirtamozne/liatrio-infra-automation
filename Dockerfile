@@ -77,5 +77,3 @@ ADD liatrio-infra-automation /home/aws/liatrio
 RUN chown -R aws:aws /home/aws
 
 USER aws
-
-RUN ["/bin/bash", "-c", "-l", "source /home/aws/liatrio/deployInfra.sh"]
