@@ -54,7 +54,7 @@ USER aws
 
 RUN pip install requests
 RUN wget https://s3.amazonaws.com/aws-cli/awscli-bundle.zip \
-&& unzip awscli-bundle.zip && rm awscli-bundle.zip && ./awscli-bundle/install -b ~/bin/aws
+&& unzip awscli-bundle.zip && rm awscli-bundle.zip && ./awscli-bundle/install -b /usr/local/bin/aws
 
 
 USER root
