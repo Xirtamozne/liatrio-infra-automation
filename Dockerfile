@@ -5,8 +5,6 @@ MAINTAINER (original) Fabian Stäber, fabian@fstab.de
 # Current version is aws-cli/1.10.53 Python/2.7.12
 #####################################################################################
 
-SHELL ["/bin/bash", "-c"]
-
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y tzdata locales
@@ -77,3 +75,7 @@ ADD liatrio-infra-automation /home/aws/liatrio
 RUN chown -R aws:aws /home/aws
 
 USER aws
+SHELL ["/bin/bash", "-c"] 
+ADD env-file /home/aws/.bashrc 
+RUN /bin/bash --login -c 'env'
+ENTRYPOINT ["bash", "--rcfile", "/home/aws/liatrio/deployInfra.sh", "-ci"]
