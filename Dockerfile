@@ -75,7 +75,3 @@ ADD liatrio-infra-automation /home/aws/liatrio
 RUN chown -R aws:aws /home/aws
 
 USER aws
-SHELL ["/bin/bash", "-c"] 
-ADD env-file /home/aws/.bashrc 
-RUN /bin/bash --login -c 'env'
-ENTRYPOINT ["bash", "--rcfile", "/home/aws/liatrio/deployInfra.sh", "-ci"]
