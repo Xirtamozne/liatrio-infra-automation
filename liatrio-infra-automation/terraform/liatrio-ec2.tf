@@ -11,14 +11,14 @@ data "aws_ami" "ec2-ami" {
     name   = "tag:Name"
     values = ["Liatrio-Project-AMI"]
   }
-  owners=["AMIOWNER"]
+  owners=["282458246159"]
   most_recent = true
 }
 
 resource "aws_instance" "liatrio-jenkins-nexus" {
     ami = "${data.aws_ami.ec2-ami.id}"
     key_name = "LiatrioKeyPairFinal"
-    instance_type = "t2.medium"
+    instance_type = "m5.xlarge"
     tags = {
         Name = "liatrio-jenkins-nexus"
     }
