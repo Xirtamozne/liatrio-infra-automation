@@ -18,6 +18,6 @@ To Build
    docker build -t="liatrio/gitnexins" .
    ```
    ```bash
-   docker run -t -i liatrio/gitnexins
+   docker run -t -v ~/.aws:/home/aws/.aws -i liatrio/gitnexins
    ```
 Inside the container, there will be a deploy alias to bootstrap the environment.
