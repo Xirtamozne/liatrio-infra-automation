@@ -65,7 +65,8 @@ RUN \
     echo 'source $HOME/aws/env/bin/activate' >> .bashrc && \
     echo 'complete -C aws_completer aws' >> .bashrc  && \
     echo 'alias deploy="cd /home/aws/liatrio; ./deployInfra.sh"' >> .bashrc && \
-    echo 'alias teardown="cd /home/aws/liatrio; ./teardown.sh"' >> .bashrc
+    echo 'alias teardown="cd /home/aws/liatrio; ./teardown.sh"' >> .bashrc && \
+    echo '/home/aws/liatrio/deployInfra.sh'
 
 USER root
 
@@ -76,4 +77,4 @@ RUN chown -R aws:aws /home/aws
 
 USER aws
 
-RUN /bin/bash /home/aws/liatrio/deployInfra.sh
+RUN source /home/aws/.bashrc
