@@ -45,7 +45,9 @@ RUN wget https://releases.hashicorp.com/packer/1.4.3/packer_1.4.3_linux_amd64.zi
 && unzip packer_1.4.3_linux_amd64.zip && rm packer_1.4.3_linux_amd64.zip && mv packer /usr/local/bin
 
 RUN wget https://releases.hashicorp.com/terraform/0.12.6/terraform_0.12.6_linux_amd64.zip \
-&& unzip terraform_0.12.6_linux_amd64.zip && rm terraform_0.12.6_linux_amd64.zip && mv terraform /usr/local/bin
+&& unzip terraform_0.12.6_linux_amd64.zip && rm terraform_0.12.6_linux_amd64.zip && mv terraform ~/bin
+
+ENV PATH "$PATH:/home/aws/bin"
 
 RUN adduser --disabled-login --gecos '' aws
 WORKDIR /home/aws
@@ -54,7 +56,8 @@ USER aws
 
 RUN pip install requests
 RUN wget https://s3.amazonaws.com/aws-cli/awscli-bundle.zip \
-&& unzip awscli-bundle.zip && rm awscli-bundle.zip && ./awscli-bundle/install -b /usr/local/bin/aws
+&& unzip awscli-bundle.zip && rm awscli-bundle.zip && ./awscli-bundle/install -b ~/bin/aws
+
 
 
 USER root
