@@ -14,7 +14,7 @@ To Build
    git clone https://github.com/Xirtamozne/liatrio-infra-automation.git
    ```
    ```bash
-   cd docker-aws-cli
+   cd liatrio-infra-automation
    docker build -t="liatrio/gitnexins" .
    ```
    ```bash
