@@ -45,7 +45,7 @@ RUN wget https://releases.hashicorp.com/packer/1.4.3/packer_1.4.3_linux_amd64.zi
 && unzip packer_1.4.3_linux_amd64.zip && rm packer_1.4.3_linux_amd64.zip && mv packer /usr/local/bin
 
 RUN wget https://releases.hashicorp.com/terraform/0.12.6/terraform_0.12.6_linux_amd64.zip \
-&& unzip terraform_0.12.6_linux_amd64.zip && rm terraform_0.12.6_linux_amd64.zip && mv terraform ~/bin
+&& unzip terraform_0.12.6_linux_amd64.zip && rm terraform_0.12.6_linux_amd64.zip && mv terraform /usr/local/bin
 
 ENV PATH "$PATH:/home/aws/bin"
 
