@@ -57,15 +57,10 @@ WORKDIR /home/aws
 
 USER aws
 
-RUN \
-    mkdir aws && \
-    virtualenv aws/env && \
-    ./aws/env/bin/pip install awscli && \
-    ./aws/env/bin/pip install requests && \
-    echo 'source $HOME/aws/env/bin/activate' >> .bashrc && \
-    echo 'complete -C aws_completer aws' >> .bashrc  && \
-    echo 'alias deploy="cd /home/aws/liatrio; ./deployInfra.sh"' >> .bashrc && \
-    echo 'alias teardown="cd /home/aws/liatrio; ./teardown.sh"' >> .bashrc
+RUN pip install requests
+RUN wget https://s3.amazonaws.com/aws-cli/awscli-bundle.zip \
+&& unzip awscli-bundle.zip && rm awscli-bundle.zip && ./awscli-bundle/install -b ~/bin/aws
+
 
 USER root
 
