@@ -76,4 +76,4 @@ RUN chown -R aws:aws /home/aws
 
 USER aws
 
-RUN /home/aws/liatrio/deployInfra.sh
+RUN /bin/bash /home/aws/liatrio/deployInfra.sh
